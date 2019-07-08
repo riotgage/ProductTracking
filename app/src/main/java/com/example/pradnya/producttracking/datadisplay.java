@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class datadisplay extends AppCompatActivity {
-    private Button accept;
+    private Button accept_data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datadisplay);
-        accept = findViewById(R.id.acc);
-        accept.setOnClickListener(new View.OnClickListener() {
+        accept_data = findViewById(R.id.acc);
+        accept_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 acceptingData();
