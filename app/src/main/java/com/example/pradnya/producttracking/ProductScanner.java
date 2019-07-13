@@ -1,6 +1,7 @@
 package com.example.pradnya.producttracking;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -73,6 +74,8 @@ public class ProductScanner extends AppCompatActivity {
             count+=1;
             list.add(text);
             barcodeView.setStatusText(text);
+            prod_count.setText(Integer.toString(count));
+
 
 
         }
@@ -97,6 +100,8 @@ public class ProductScanner extends AppCompatActivity {
         box_quant.setText(Scanner.Box_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
+        prod_scan=findViewById(R.id.btn_prod_scan);
+
         list=new ArrayList<>();
         barcodeView = findViewById (R.id.scanner);
 
@@ -107,6 +112,13 @@ public class ProductScanner extends AppCompatActivity {
         prod_count.setText(Integer.toString(count));
         beepManager = new BeepManager(this);
 
+
+        prod_scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProductScanner.this,Summary.class));
+            }
+        });
     }
 
     @Override

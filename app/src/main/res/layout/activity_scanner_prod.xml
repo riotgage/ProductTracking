@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Scanner_prod">
+    tools:context=".ProductScanner">
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/scanner"
@@ -95,6 +95,38 @@
 
 
 
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_marginBottom="40dp"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/btn_prod_scan"
+            android:layout_weight="1.25"
+            android:layout_margin="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Products"
+            android:textSize="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/prod_count"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:text="0"
+            android:textColor="@color/white"
+            android:gravity="center"/>
     </LinearLayout>
 
 

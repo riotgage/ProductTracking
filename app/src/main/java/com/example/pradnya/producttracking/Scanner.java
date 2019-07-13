@@ -37,7 +37,7 @@ public class Scanner extends AppCompatActivity {
     private Button scan_prod;
     private ArrayList<String> barcodes;
     int number_of_scans=-1;
-    static String cat_no,Desc,Box_quant;
+    static String cat_no,Desc,Box_quant,unique_no;
     private  TextView box_quant,desc,cat_id,prod_quant,box_no,date,pono,loc;
     private BarcodeCallback callback = new BarcodeCallback() {
 
@@ -56,6 +56,7 @@ public class Scanner extends AppCompatActivity {
                 Toast.makeText(Scanner.this, "Somethins is Missing", Toast.LENGTH_SHORT).show();
             }
             else{
+                unique_no=splits[0];
                 box_quant.setText(splits[6]);
                 Box_quant=splits[6];
                 cat_id.setText(splits[1]);
@@ -127,7 +128,7 @@ public class Scanner extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                startActivity(new Intent(Scanner.this,Scanner_prod.class));
+                startActivity(new Intent(Scanner.this, ProductScanner.class));
             }
         });
     }
