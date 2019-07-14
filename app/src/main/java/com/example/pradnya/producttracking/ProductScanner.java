@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pradnya.producttracking.Info.ProductInfo;
+import com.example.pradnya.producttracking.Info.info;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.BeepManager;
@@ -31,9 +33,8 @@ public class ProductScanner extends AppCompatActivity {
     private BeepManager beepManager;
     private String text="";
     private Button prod_scan;
-    static  int count=0;
 
-    private ArrayList<String> list;
+    public static ArrayList<String> list;
     String unique_id,prod_quant,prod_quant_no;
     private BarcodeCallback callback = new BarcodeCallback() {
         @Override
@@ -71,11 +72,11 @@ public class ProductScanner extends AppCompatActivity {
                 }
                 return;
             }
-            count+=1;
-            list.add(text);
             barcodeView.setStatusText(text);
-            prod_count.setText(Integer.toString(count));
-
+            list.add(text);
+            prod_count.setText(Integer.toString(list.size()));
+            info i=new info(splits[0],splits[1]);
+            ProductInfo.information.add(i);
 
 
         }
@@ -103,13 +104,14 @@ public class ProductScanner extends AppCompatActivity {
         prod_scan=findViewById(R.id.btn_prod_scan);
 
         list=new ArrayList<>();
+        list=ProductInfo.list;
         barcodeView = findViewById (R.id.scanner);
 
         Collection<BarcodeFormat> formats = Arrays.asList(BarcodeFormat.QR_CODE, BarcodeFormat.CODE_39);
         barcodeView.initializeFromIntent(getIntent());
         barcodeView.decodeContinuous(callback);
         barcodeView.setStatusText("Please First Scan .");
-        prod_count.setText(Integer.toString(count));
+        prod_count.setText("0");
         beepManager = new BeepManager(this);
 
 

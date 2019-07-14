@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pradnya.producttracking.Info.ProductInfo;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.BeepManager;
@@ -27,6 +28,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import static com.example.pradnya.producttracking.ProductScanner.list;
+
 
 public class Scanner extends AppCompatActivity {
     private static final String TAG = Scanner.class.getSimpleName();
@@ -35,8 +38,6 @@ public class Scanner extends AppCompatActivity {
     private String lastText;
     private LinearLayout box_desc,box_desc_down;
     private Button scan_prod;
-    private ArrayList<String> barcodes;
-    int number_of_scans=-1;
     static String cat_no,Desc,Box_quant,unique_no;
     private  TextView box_quant,desc,cat_id,prod_quant,box_no,date,pono,loc;
     private BarcodeCallback callback = new BarcodeCallback() {
@@ -47,8 +48,6 @@ public class Scanner extends AppCompatActivity {
 
 
             lastText = result.getText();
-            number_of_scans+=1;
-
             String[] splits;  //cat-1,quant-7
             splits = lastText.split("\\|");
 
@@ -74,7 +73,7 @@ public class Scanner extends AppCompatActivity {
             }
 
             barcodeView.setStatusText(lastText);
-
+            ProductInfo.box=lastText;
 
         }
 
@@ -118,7 +117,6 @@ public class Scanner extends AppCompatActivity {
         Collection<BarcodeFormat> formats = Arrays.asList(BarcodeFormat.QR_CODE, BarcodeFormat.CODE_39);
         barcodeView.initializeFromIntent(getIntent());
         barcodeView.decodeContinuous(callback);
-        barcodes=new ArrayList<>();
         barcodeView.setStatusText("Please First Scan Box.");
 
         beepManager = new BeepManager(this);
