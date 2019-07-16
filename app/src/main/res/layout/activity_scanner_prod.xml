@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductScanner">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/scanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/ll_desc"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="50"
+                android:text="Category"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/cat_id"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="50"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="50"
+                android:text="Desc"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="50"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="50"
+                android:text="Box Quantity"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/box_quant"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="50"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/prod_count"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.75"
+        android:text="0"
+        android:layout_below="@+id/ll_desc"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <LinearLayout android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_marginBottom="40dp"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/btn_prod_scan"
+            android:layout_weight="1.25"
+            android:layout_margin="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Products"
+            android:textSize="20dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
