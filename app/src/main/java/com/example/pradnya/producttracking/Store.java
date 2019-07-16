@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,7 +13,7 @@ import com.example.pradnya.producttracking.Info.ProductInfo;
 public class Store extends AppCompatActivity {
 
     private TextView box_quant,desc,cat_id,uni_no;
-
+    ProgressBar bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +28,11 @@ public class Store extends AppCompatActivity {
         box_quant.setText(Scanner.Box_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
+        bar=findViewById(R.id.progressBar);
     }
 
     public void store(View view) {
+
         Toast.makeText(this, "Storing Data", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this,Scanner.class));
         finish();
