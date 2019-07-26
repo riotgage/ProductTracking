@@ -38,7 +38,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
                 android:text="Category"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 />
 
             <TextView
@@ -47,7 +47,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,7 +63,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="Desc"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/desc"
@@ -71,7 +71,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="Box Quantity"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/box_quant"
@@ -94,7 +94,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,7 +147,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
                 android:text="Board No"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 />
 
             <TextView
@@ -156,7 +156,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -172,7 +172,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="Date"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/date"
@@ -180,7 +180,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -195,7 +195,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="PONO"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/pono"
@@ -203,7 +203,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,7 +218,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="Location"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/loc"
@@ -226,7 +226,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -241,7 +241,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="Product Quantity"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/prod_quant"
@@ -249,7 +249,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="50"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </LinearLayout>
 
     </LinearLayout>
