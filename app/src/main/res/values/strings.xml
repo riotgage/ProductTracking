@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Product Tracking</string>
+    <string name="userid">UserID</string>
+    <string name="pass">Password</string>
 </resources>
