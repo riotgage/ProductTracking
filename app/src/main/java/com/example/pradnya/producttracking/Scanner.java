@@ -43,6 +43,7 @@ public class Scanner extends AppCompatActivity {
 
         public void barcodeResult(BarcodeResult result) {
 
+            barcodeView = findViewById(R.id.barcode_scanner);
 
             lastText = result.getText();
             String[] splits;  //cat-1,quant-7
@@ -67,6 +68,7 @@ public class Scanner extends AppCompatActivity {
 
                 box_desc.setVisibility(View.VISIBLE);
                 box_desc_down.setVisibility(View.VISIBLE);
+                barcodeView.setVisibility(View.INVISIBLE);
             }
 
             barcodeView.setStatusText(lastText);
@@ -101,7 +103,7 @@ public class Scanner extends AppCompatActivity {
         date=findViewById(R.id.date);
 
         box_desc.setVisibility(View.INVISIBLE);
-        barcodeView = (DecoratedBarcodeView) findViewById(R.id.barcode_scanner);
+        barcodeView =  findViewById(R.id.barcode_scanner);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 
