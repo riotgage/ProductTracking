@@ -53,10 +53,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         if(count>0)
-            return true;
+            return true ;
         else
             return false;
-
 
     }
 }

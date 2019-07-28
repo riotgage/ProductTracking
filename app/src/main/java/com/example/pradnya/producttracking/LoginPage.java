@@ -43,8 +43,8 @@ public class LoginPage extends AppCompatActivity {
                 go.setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
-
-                        if (admin_pass.toString().equals("12345")){
+                           String adminpass = admin_pass.getText().toString();
+                        if (adminpass.equals("12345")){
                             Toast.makeText(getApplication(),"Confirmed as Admin", Toast.LENGTH_SHORT).show();
                             startActivity(registerIntent);
                         }
@@ -52,6 +52,23 @@ public class LoginPage extends AppCompatActivity {
                             Toast.makeText(getApplication(),"Cannot register Contact Admin", Toast.LENGTH_SHORT).show();
                         }
                     }   });
+                btn_login.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String user = etextuser.getText().toString().trim();
+                        String pwd = etextpassword.getText().toString().trim();
+                        boolean res = db.checkUser(user,pwd);
+                        if(res == true )
+                        {
+                            Toast.makeText(getApplication(),"Successfully logged in", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplication(),"Incorrect Userid or Password", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
             }
         });
 

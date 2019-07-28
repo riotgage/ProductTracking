@@ -16,16 +16,18 @@
         <activity android:name=".Store" />
         <activity android:name=".Summary" />
         <activity android:name=".ProductScanner" />
-        <activity android:name=".Scanner" />
+        <activity android:name=".LoginPage" />
         <activity android:name=".BoxScanner" />
-        <activity android:name=".LoginPage">
+        <activity android:name=".Scanner">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".QA_FirstPage" />
+        <activity android:name=".QA_locationscanner"></activity>
     </application>
 
 </manifest>
