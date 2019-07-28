@@ -29,9 +29,8 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
-                android:text="Category"
                 android:gravity="center"
-                />
+                android:text="Cat no." />
 
             <TextView
                 android:id="@+id/cat_id"
@@ -81,9 +80,8 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
-                android:text="Box Quantity"
                 android:gravity="center"
-                />
+                android:text="Product Quantity" />
 
             <TextView
                 android:id="@+id/box_quant"

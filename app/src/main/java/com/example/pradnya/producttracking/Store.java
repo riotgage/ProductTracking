@@ -42,7 +42,7 @@ public class Store extends AppCompatActivity {
         uni_no=findViewById(R.id.uni_no);
         String[] splits=ProductInfo.list.get(0).split("\\|");
         uni_no.setText(splits[0]);
-        box_quant.setText(Scanner.Box_quant);
+        box_quant.setText(Scanner.Prod_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
         bar=findViewById(R.id.progressBar);

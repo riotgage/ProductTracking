@@ -26,7 +26,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-
+        db = new DatabaseHelper(this);
         etextuser = (EditText) findViewById(R.id.usrid);
         etextpassword = (EditText) findViewById(R.id.pass);
         btn_login = (Button) findViewById(R.id.btn_login);
@@ -52,34 +52,31 @@ public class LoginPage extends AppCompatActivity {
                             Toast.makeText(getApplication(),"Cannot register Contact Admin", Toast.LENGTH_SHORT).show();
                         }
                     }   });
-                btn_login.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String user = etextuser.getText().toString().trim();
-                        String pwd = etextpassword.getText().toString().trim();
-                        boolean res = db.checkUser(user,pwd);
-                        if(res == true )
-                        {
-                            Toast.makeText(getApplication(),"Successfully logged in", Toast.LENGTH_SHORT).show();
-                            Intent scannerIntent = new Intent(LoginPage.this,Scanner.class);
-                            startActivity(scannerIntent);
-                        }
-                        else
-                        {
-                            Toast.makeText(getApplication(),"Incorrect Userid or Password", Toast.LENGTH_SHORT).show();
-                        }
 
-                    }
-                });
             }
         });
 
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = etextuser.getText().toString().trim();
+                String pwd = etextpassword.getText().toString().trim();
+                boolean res = db.checkUser(user,pwd);
+                if(res == true )
+                {
+                    Toast.makeText(getApplication(),"Successfully logged in", Toast.LENGTH_SHORT).show();
+                    Intent scannerIntent = new Intent(LoginPage.this,Scanner.class);
+                    startActivity(scannerIntent);
+                }
+                else
+                {
+                    Toast.makeText(getApplication(),"Incorrect Userid or Password", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
         }
-
-
-
-
 
     }
 

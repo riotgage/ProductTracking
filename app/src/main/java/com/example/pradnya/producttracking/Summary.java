@@ -43,7 +43,7 @@ public class Summary extends AppCompatActivity {
         cat_id=findViewById(R.id.cat_id);
         l=findViewById(R.id.list);
 
-        box_quant.setText(Scanner.Box_quant);
+        box_quant.setText(Scanner.Prod_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
 

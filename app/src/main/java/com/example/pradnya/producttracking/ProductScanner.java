@@ -98,7 +98,7 @@ public class ProductScanner extends AppCompatActivity {
         desc=findViewById(R.id.desc);
         cat_id=findViewById(R.id.cat_id);
         prod_count=findViewById(R.id.prod_count);
-        box_quant.setText(Scanner.Box_quant);
+        box_quant.setText(Scanner.Prod_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
         prod_scan=findViewById(R.id.btn_prod_scan);

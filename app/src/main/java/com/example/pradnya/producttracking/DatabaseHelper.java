@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkUser(String user, String password){
         String[] columns = {COL_1};
         SQLiteDatabase db = getReadableDatabase();
-        String selection = COL_2 + "=?" +"and" + COL_3 + "=?";
+        String selection = COL_2 + "=?" +"and " + COL_3 + " =?";
         String[] selectionArgs = {user, password};
         Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs,null,null,null);
         int count = cursor.getCount();

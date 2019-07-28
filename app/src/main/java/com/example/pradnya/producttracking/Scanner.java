@@ -35,7 +35,7 @@ public class Scanner extends AppCompatActivity {
     private String lastText;
     private LinearLayout box_desc,box_desc_down;
     private Button scan_prod;
-    static String cat_no,Desc,Box_quant,unique_no;
+    static String cat_no,Desc,Box_quant,unique_no,Prod_quant;
     private  TextView box_quant,desc,cat_id,prod_quant,box_no,date,pono,loc;
     private BarcodeCallback callback = new BarcodeCallback() {
 
@@ -54,7 +54,7 @@ public class Scanner extends AppCompatActivity {
             }
             else{
                 unique_no=splits[0];
-                box_quant.setText(splits[6]);
+                box_quant.setText(splits[7]);
                 Box_quant=splits[6];
                 cat_id.setText(splits[1]);
                 cat_no=splits[1];
@@ -64,8 +64,9 @@ public class Scanner extends AppCompatActivity {
                 date.setText(splits[3]);
                 pono.setText(splits[4]);
                 loc.setText(splits[5]);
-                prod_quant.setText(splits[7]);
 
+                prod_quant.setText(splits[6]);
+                Prod_quant = splits[7];
                 box_desc.setVisibility(View.VISIBLE);
                 box_desc_down.setVisibility(View.VISIBLE);
                 barcodeView.setVisibility(View.INVISIBLE);

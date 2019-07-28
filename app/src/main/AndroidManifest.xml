@@ -16,9 +16,9 @@
         <activity android:name=".Store" />
         <activity android:name=".Summary" />
         <activity android:name=".ProductScanner" />
-        <activity android:name=".LoginPage" />
+        <activity android:name=".Scanner" />
         <activity android:name=".BoxScanner" />
-        <activity android:name=".Scanner">
+        <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

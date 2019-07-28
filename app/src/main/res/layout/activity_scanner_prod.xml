@@ -33,9 +33,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="50"
-                android:text="Category"
-                android:textColor="@color/white"
-                />
+                android:text="Cat no."
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/cat_id"
@@ -81,7 +80,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="50"
-                android:text="ProductQty"
+                android:text="Product Quantity"
                 android:textColor="@color/white" />
 
             <TextView
