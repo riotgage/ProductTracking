@@ -61,6 +61,8 @@ public class LoginPage extends AppCompatActivity {
                         if(res == true )
                         {
                             Toast.makeText(getApplication(),"Successfully logged in", Toast.LENGTH_SHORT).show();
+                            Intent scannerIntent = new Intent(LoginPage.this,Scanner.class);
+                            startActivity(scannerIntent);
                         }
                         else
                         {
