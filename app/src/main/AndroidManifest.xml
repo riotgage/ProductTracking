@@ -13,19 +13,21 @@
         android:roundIcon="@mipmap/logo2_round"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
+
+
         <activity android:name=".Store" />
         <activity android:name=".Summary" />
         <activity android:name=".ProductScanner" />
         <activity android:name=".Scanner" />
         <activity android:name=".BoxScanner" />
-        <activity android:name=".LoginPage">
+        <activity android:name=".database.LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".database.RegisterActivity" />
         <activity android:name=".QA_FirstPage" />
         <activity android:name=".QA_locationscanner"></activity>
     </application>

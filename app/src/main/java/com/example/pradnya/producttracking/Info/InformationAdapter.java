@@ -11,13 +11,12 @@ import android.widget.TextView;
 import com.example.pradnya.producttracking.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class InformationAdapter extends ArrayAdapter<info> {
+public class InformationAdapter extends ArrayAdapter<information> {
 
     private  Context mContext;
     private int mResource;
-    public InformationAdapter( Context context, int resource,ArrayList<info> objects) {
+    public InformationAdapter( Context context, int resource,ArrayList<information> objects) {
         super(context, resource, objects);
         mContext=context;
         mResource=resource;
@@ -29,7 +28,7 @@ public class InformationAdapter extends ArrayAdapter<info> {
         String box_no=getItem(position).getBox_no();
         String cat=getItem(position).getCategory();
 
-        info i =new info(box_no,cat);
+        information i =new information(box_no,cat);
         LayoutInflater inflater=LayoutInflater.from(mContext);
         convertView=inflater.inflate(mResource,parent,false);
 

@@ -1,7 +1,6 @@
-package com.example.pradnya.producttracking;
+package com.example.pradnya.producttracking.database;
 
 import android.content.Intent;
-import android.inputmethodservice.KeyboardView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pradnya.producttracking.R;
+import com.example.pradnya.producttracking.Scanner;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -65,7 +67,7 @@ public class LoginPage extends AppCompatActivity {
                 if(res == true )
                 {
                     Toast.makeText(getApplication(),"Successfully logged in", Toast.LENGTH_SHORT).show();
-                    Intent scannerIntent = new Intent(LoginPage.this,Scanner.class);
+                    Intent scannerIntent = new Intent(LoginPage.this, Scanner.class);
                     startActivity(scannerIntent);
                 }
                 else

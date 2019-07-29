@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pradnya.producttracking.Info.ProductInfo;
-import com.example.pradnya.producttracking.Info.info;
+import com.example.pradnya.producttracking.Info.information;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.BeepManager;
@@ -75,7 +75,7 @@ public class ProductScanner extends AppCompatActivity {
             barcodeView.setStatusText(text);
             list.add(text);
             prod_count.setText(Integer.toString(list.size()));
-            info i=new info(splits[0],splits[1]);
+            information i=new information(splits[0],splits[1]);
             ProductInfo.information.add(i);
 
 

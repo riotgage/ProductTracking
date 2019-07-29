@@ -1,4 +1,4 @@
-package com.example.pradnya.producttracking;
+package com.example.pradnya.producttracking.database;
 
 import android.content.ContentValues;
 import android.content.Context;

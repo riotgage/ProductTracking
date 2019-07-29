@@ -3,22 +3,17 @@ package com.example.pradnya.producttracking;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pradnya.producttracking.Info.InformationAdapter;
 import com.example.pradnya.producttracking.Info.ProductInfo;
-import com.example.pradnya.producttracking.Info.info;
+import com.example.pradnya.producttracking.Info.information;
 
 import java.util.ArrayList;
 
@@ -29,7 +24,7 @@ public class Summary extends AppCompatActivity {
 
     private TextView box_quant,desc,cat_id;
     private ListView l;
-    private ArrayList<info>list;
+    private ArrayList<information>list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

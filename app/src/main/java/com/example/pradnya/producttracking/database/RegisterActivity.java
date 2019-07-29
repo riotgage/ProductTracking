@@ -1,4 +1,4 @@
-package com.example.pradnya.producttracking;
+package com.example.pradnya.producttracking.database;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pradnya.producttracking.R;
 
 public class RegisterActivity extends AppCompatActivity {
     DatabaseHelper db;
@@ -30,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(RegisterActivity.this,LoginPage.class);
+                Intent loginIntent = new Intent(RegisterActivity.this, LoginPage.class);
                 startActivity(loginIntent);
             }
         });

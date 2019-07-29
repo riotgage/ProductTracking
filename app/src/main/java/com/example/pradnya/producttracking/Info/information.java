@@ -1,12 +1,12 @@
 package com.example.pradnya.producttracking.Info;
 
-public class info {
+public class information {
     private String box_no,category;
 
-    public info() {
+    public information() {
     }
 
-    public info(String box_no, String category) {
+    public information(String box_no, String category) {
         this.box_no = box_no;
         this.category = category;
     }

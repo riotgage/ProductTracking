@@ -8,7 +8,7 @@
     android:padding="5dp"
 
     android:background="@drawable/bg2"
-    tools:context=".LoginPage">
+    tools:context=".database.LoginPage">
 
 
     <ImageView

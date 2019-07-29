@@ -51,8 +51,8 @@ public class Store extends AppCompatActivity {
     public void store(View view) {
 
         Toast.makeText(this, "Storing Data", Toast.LENGTH_SHORT).show();
-        checkProducts(ProductInfo.list,ProductInfo.list.get(5));
-        finish();
+        //checkProducts(ProductInfo.list,ProductInfo.list.get(5));
+        //finish();
     }
 
     private void checkProducts(final ArrayList<String> barcodes, final String s) {
