@@ -2,6 +2,7 @@ package com.example.pradnya.producttracking;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,8 @@ public class Store extends AppCompatActivity {
     ProgressBar bar;
     String res;
     ProgressDialog dialog;
+    private String[] splits=ProductInfo.list.get(0).split("\\|");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +43,16 @@ public class Store extends AppCompatActivity {
         desc=findViewById(R.id.desc);
         cat_id=findViewById(R.id.cat_id);
         uni_no=findViewById(R.id.uni_no);
-        String[] splits=ProductInfo.list.get(0).split("\\|");
         uni_no.setText(splits[0]);
         box_quant.setText(Scanner.Prod_quant);
         desc.setText(Scanner.Desc);
         cat_id.setText(Scanner.cat_no);
-        bar=findViewById(R.id.progressBar);
     }
 
     public void store(View view) {
 
         Toast.makeText(this, "Storing Data", Toast.LENGTH_SHORT).show();
-        //checkProducts(ProductInfo.list,ProductInfo.list.get(5));
-        //finish();
+        addUnique();
     }
 
     private void checkProducts(final ArrayList<String> barcodes, final String s) {
@@ -67,7 +67,6 @@ public class Store extends AppCompatActivity {
                 try {
                     JSONObject jsonObject=new JSONObject(response);
                     res=jsonObject.getString("message");
-                    //Toast.makeText(CodeList.this, "fuck this", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Store.this,Scanner.class));
 
                 }
@@ -94,7 +93,8 @@ public class Store extends AppCompatActivity {
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
-    public void CreateTable(final ArrayList<String> barcode){
+    public void CreateTable(){
+        final ArrayList<String>barcode=ProductInfo.list;
         dialog=new ProgressDialog(this);
         dialog.setMessage("Creating Box");
         dialog.show();
@@ -126,4 +126,43 @@ public class Store extends AppCompatActivity {
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
 
     }
+
+    public void addUnique(){
+        dialog=new ProgressDialog(this);
+        dialog.setMessage("Creating Box");
+        dialog.show();
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, Constants.URL_add_unique_id, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                finish();
+                try {
+                    JSONObject jsonObject=new JSONObject(response);
+                    Toast.makeText(Store.this,"jogg",Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        dialog.dismiss();
+
+                        Toast.makeText(Store.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String>params=new HashMap<>();
+                params.put("uniq_id",splits[0]);
+                return params;
+            }
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
+    }
+
 }
